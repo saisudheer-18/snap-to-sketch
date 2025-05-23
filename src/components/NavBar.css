@@ -1,0 +1,126 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(40, 40, 40, 0); /* Lighter background */
+  color: #fff;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+  padding: 0.75rem 0;
+  font-family: 'Inter', sans-serif; /* Added font family */
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ec4899;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Added space between logo parts */
+}
+
+.navbar-logo:hover {
+  color: #fff;
+}
+
+/* SnapToSketch Home text styling */
+.navbar-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.navbar-logo-main {
+  font-size: 1.3rem;
+}
+
+.navbar-logo-sub {
+  font-size: 0.7rem;
+  font-weight: normal;
+  color: rgba(255,255,255,0.7);
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  padding-inline: 20px;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.navbar-links li a:hover {
+  color: #ec4899;
+}
+
+/* Active link indicator */
+.navbar-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ec4899;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(40, 40, 40, 0.95); /* Lighter mobile menu */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    display: none;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
+}
